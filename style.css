@@ -237,3 +237,73 @@ footer {
 .legal-links a:hover {
     color: #00ff88;
 }
+.version-list {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.version-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #111111;
+    border-radius: 6px;
+    border-left: 4px solid #333333;
+    transition: all 0.2s ease;
+}
+/* La riga attiva (la linea verde del tuo schema image_188b17.png) */
+.version-row.active {
+    border-left-color: #00ff88;
+    background-color: #15221b;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.05);
+}
+.version-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.version-name {
+    font-weight: 600;
+    font-size: 16px;
+    color: #ffffff;
+}
+.version-row.disabled .version-name {
+    color: #666666;
+}
+.badge {
+    font-size: 11px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+.badge.green {
+    background-color: rgba(0, 255, 136, 0.2);
+    color: #00ff88;
+    border: 1px solid rgba(0, 255, 136, 0.4);
+}
+.badge.gray {
+    background-color: #222222;
+    color: #666666;
+    border: 1px solid #333333;
+}
+.download-btn {
+    background-color: #00ff88;
+    color: #000000;
+    padding: 8px 18px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+.download-btn:hover {
+    background-color: #00cc6e;
+}
+.lock-text {
+    color: #555555;
+    font-size: 14px;
+    font-weight: 500;
+}

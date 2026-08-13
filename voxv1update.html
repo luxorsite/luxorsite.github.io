@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxor</title>
+    <link rel="icon" type="image/png" href="luxor.png">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (localStorage.getItem("luxor_accepted") === "true") {
+                document.getElementById("overlay").style.display = "none";
+                document.getElementById("main-content").style.display = "block";
+            }
+            
+            const checkbox = document.getElementById("agree-check");
+            const btn = document.getElementById("continue-btn");
+            
+            checkbox.addEventListener("change", function() {
+                btn.disabled = !this.checked;
+            });
+            
+            btn.addEventListener("click", function() {
+                if (checkbox.checked) {
+                    localStorage.setItem("luxor_accepted", "true");
+                    document.getElementById("overlay").style.display = "none";
+                    document.getElementById("main-content").style.display = "block";
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div id="overlay" class="gate-overlay">
+        <div class="gate-box">
+            <img src="luxor.png" alt="Luxor Logo" class="gate-logo">
+            <h2>Welcome to Luxor</h2>
+            <p>Before accessing our site, you must read and accept our legal documentation.</p>
+            <div class="gate-links">
+                <a href="tos.html" target="_blank">Terms of Service</a>
+                <a href="privacy.html" target="_blank">Privacy Policy</a>
+            </div>
+            <div class="gate-checkbox-area">
+                <input type="checkbox" id="agree-check">
+                <label for="agree-check">I agree that I have read the Terms of Service and Privacy Policy</label>
+            </div>
+            <button id="continue-btn" class="btn" disabled style="width: 100%; cursor: pointer;">Continue</button>
+        </div>
+    </div>
+
+    <div id="main-content" style="display: none;">
+        <header>
+            <div class="logo-area">
+                <img src="luxor.png" alt="Luxor Logo" class="site-logo">
+                <span class="brand-name">LUXOR</span>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="tos.html">TOS</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="home" class="hero-section">
+                <h1>Update logs of Voxaller V1</h1>
+                <p>Voxaller V1.0.1: Added Spanish language</p>
+                <a href="VoxallerV1setup.exe" class="btn">DOWNLOAD</a>
+            </section>
+
+    <footer>
+        <p>&copy; 2026 Luxor. All rights reserved.</p>
+        <div class="legal-links">
+            <a href="tos.html">Terms of Service</a> | 
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
+    </footer>
+    </div>
+
+</body>
+</html>
